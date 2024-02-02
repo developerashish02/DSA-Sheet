@@ -1,0 +1,13 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+
+        hashmap = {}
+
+        for num in nums:
+            hashmap[num] = hashmap.get(num, 0) + 1
+
+        for num, count in hashmap.items():
+            if count == 1:
+                return num
+
+        return -1
